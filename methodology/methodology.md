@@ -31,7 +31,7 @@ model.compile(loss='mean_squared_error',optimizer='adam')
 
 model.summary()
 ```
-? 여기서 20이 의미하는 바는?
+
 ```
 Model: "sequential"
 _________________________________________________________________

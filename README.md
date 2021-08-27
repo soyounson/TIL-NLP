@@ -10,3 +10,10 @@ AnoGAN : (2017) Unsupervised Anomaly Detection with Generative Adversarial Netwo
 GANomaaly : (2018) GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training
 ```
 ref: https://github.com/kyugorithm/TIL/tree/main/journal [21,22]
+
+### ☺︎ Methodology
+> explore ML/DL methodology 
+```
+LSTM/CuDNNLSTM
+```
+

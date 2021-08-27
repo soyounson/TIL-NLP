@@ -16,6 +16,44 @@ ref: https://3months.tistory.com/168
 * input shape = (timestep, feature)
 * model architecture
 
+```
+from keras.layers import LSTM
+from keras.models import Sequential
+from keras.layers import Dense
+import keras.backend as K
+from keras.callbacks import EarlyStopping
+
+K.clear_session()
+model = Sequential()
+model.add(LSTM(20, input_shape=(12,1))) # input 
+model.add(Dense(1)) # output
+model.compile(loss='mean_squared_error',optimizer='adam') 
+
+model.summary()
+```
+? 여기서 20이 의미하는 바는?
+```
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm (LSTM)                  (None, 20)                1760      
+_________________________________________________________________
+dense (Dense)                (None, 1)                 21        
+=================================================================
+Total params: 1,781
+Trainable params: 1,781
+Non-trainable params: 0
+_________________________________________________________________
+```
+* model fitting
+Training dataset으로 optimization과정을 통해 모델의 weight을 찾는 과정. 
+early stopping 객체를 이용하여 epoch마다 early stopping 체크함.
+```
+early_stop = EarlyStopping(monitor='loss', patience=1, verbose=1)
+model.fit(X_train,y_train, epochs = 100, batch_size = 30, verbose = 1, callbacks = [early_stop])
+```
+
 
 #### CuDNNLSTM
 * CuDNNLSTM is faster than LSTM (speed up model.evaluate() and model.predict()).

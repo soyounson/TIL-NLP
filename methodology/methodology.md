@@ -53,7 +53,11 @@ early stopping 객체를 이용하여 epoch마다 early stopping 체크함.
 early_stop = EarlyStopping(monitor='loss', patience=1, verbose=1)
 model.fit(X_train,y_train, epochs = 100, batch_size = 30, verbose = 1, callbacks = [early_stop])
 ```
-
+* prediction 
+model.predict통해 데이터 셋의 예측값 y_hat 구함.
+```
+y_pred = model.predict(X_test_t)
+```
 
 #### CuDNNLSTM
 * CuDNNLSTM is faster than LSTM (speed up model.evaluate() and model.predict()).

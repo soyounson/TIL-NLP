@@ -23,7 +23,12 @@ IEEE (2018)
 
 :battery: Doesn't rely on labeling of anomalies rather it leverages the original time series data even w/o removing anomalies (given that the number of anomalies in the data set is less than 5%).
 
-정리 
-Unsupervised learning -> labeling이 따로 필요없어서 Big data를 다루는데 용이함. 
-time series predictor를 통해, 데이터의 시간적 흐름을 읽으므로 periodicity, trend, seasonality안에 존재하는 anomalies을 찾아내고 detect하는데 용이함. 
-정상의 흐름을 배우고, 거기서 anomalities 찾는것이므로 anomalies' labels에 너무 의존적이지 않다. 
+:battery: Instead of classifying whole time series as normal or abnormal, DeepAnT's objective is to robustly detect point anomalies. In particular, following are the main contributions of this paper: 
+- To the best of our knowledge, DeepAnT is the first deep learning based approach which is capable of detecting point anomalies, contextual anomalies, and discords in time series data in an unsupervised setting.
+- The proposed pipeline is flexible and can be easily adapted for different use cases and domains. It can be applied to uni-variant as well as multi-variant time series. 
+- In contrast to the LSTM based approach, CNN based DeepAnT is not data hungry. It is equally applicable to big data as weel as small data. We are only using 40% of a given time series to train a model.
+
+:battery: 정리하자면, 
+* Unsupervised learning -> labeling이 따로 필요없어서 Big data를 다루는데 용이함. 
+* time series predictor를 통해, 데이터의 시간적 흐름을 읽으므로 periodicity, trend, seasonality안에 존재하는 anomalies을 찾아내고 detect하는데 용이함. 
+* 정상의 흐름을 배우고, 거기서 anomalities 찾는것이므로 anomalies' labels에 너무 의존적이지 않다. 

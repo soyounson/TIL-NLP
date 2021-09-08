@@ -62,3 +62,17 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
+#### Genearator model 
+
+The generator model takes as input point from the latent space and generates a new sample, e.g. a vector w/ both the input and output elements of our function. 
+A latent variable is a hidden or unobserved variable, and a latent space is a multi-dimensional vector space and these variables. 
+
+We will define a small latent space of five dimensions and use the standard approach in the GAN literature of using a Gaussian distribution for each variable in the latent space. We will generate new inputs by drawing random numbers from a standard Gaussian distribution, i.e. mean of zero and a standard deviation of one.
+
+- Inputs: Point in latent space, e.g. a five-element vector of Gaussian random numbers.
+- Outputs: Two-element vector representing a generated sample for our function (x and x^2).
+
+
+
+
+working.....

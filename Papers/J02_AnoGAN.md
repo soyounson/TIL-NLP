@@ -38,7 +38,9 @@
 #### :leaves: related work
 - anomaly detection is the task of **identifying test data not fitting the normal data distribution seen during training**.
 - typically either use an explicit representation of the **distribution of normal data in a feature space, and determine outliers based on the local density** at the observations' position in the feature space. 
-
+- Seebock et al identified anomalous regions in optical coherence tomography (OCT) images through unsuperviesd learning on healthy examples, using a **convolutional autoencoder and a one-class support vectror machine (SVM)**, and eplored different classes of anomalies. In contrast to this work, the SVM in Seebock's sutdy involved the need to choose a hyper-paramter that defined the amount of training points covered by the estimated healthy region. 
+- RAdford et al. introduced deep convolutional generative adversarial networks (DCGANs) and showed that GANs are capacble of captureing semantic image content enabling vector arithmetic for visual concepts.
+- Yeh et al. trained GANs on natural images and applied the trained model for semantic image inpainting. 
 
 #### :leaves: distinction of this work
 - define an anomaly score, which is not needed in an inpainting task. 

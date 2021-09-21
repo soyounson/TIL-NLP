@@ -18,14 +18,13 @@
 
 > 가장 먼저 정상 데이터들로 DCGAN릉 학습시키고, anomaly 판단. P_z에서 z를 뽑고, Z의 계수를 업데이트하는 과정을 일정 거친 다음 이 z로부터 query data, x가 다시 만들어지는지를 판단함. 즉, 정상 데이터의 latent space로 적절하게 매핑되는지 여부를 통해 데이터의 정상 여부를 판단. (ref : https://kangbk0120.github.io/articles/2018-01/ano-gan)
 
-### :seedling: Prologue 
+### :seedling: Prologue (정리)
 - background : 의학쪽 이미지 데이터에서 진단, 질병 진행 모니터링 및 진행 반응등을 확인하기 위해 사용.
 - related work : anomaly detection이란 정상적 데이터에 fit되지 않는 것들을 발견해내는 과정임. 
 - unsupervised learning을 베이스로 한 DCGAN임.
 - 건강한 상태의 이미지를 이용하여 Discriminator를 training시킴.
 - 그 다음으로, discriminator를 통해 건강한 데이터와 이상이 있는 데이터에서 이상 진단을 하도록 함. 
 - image space에서 latent space로 맵핑 시킴
-
 
 ### :seedling: Abstract
 - perform **unsupervised learning to identify anomalies in imaging data as candidates for markers**.
@@ -37,10 +36,13 @@
 - medical imaging enables the observation of markers correlating with disease status, and treatment response. 
 - typically,computational detection in imaging data requires **extensive supervised training using large amounts of annotated data such as labeled lesions**
 #### :leaves: related work
-- anomaly detection is the task of identifying test data not fitting the normal data distribution seen during training.
+- anomaly detection is the task of **identifying test data not fitting the normal data distribution seen during training**.
+- typically either use an explicit representation of the **distribution of normal data in a feature space, and determine outliers based on the local density** at the observations' position in the feature space. 
+
 
 #### :leaves: distinction of this work
-
+- define an anomaly score, which is not needed in an inpainting task. 
+- the main difference of this paper to aforementioned anomaly detection work is the representative power of the generative model and the coupled mapping schema, which utilizes a trained DCGAN and **enable accurate discrimination between normal anatomy, and local anomalous appearance**. (:warning: how?)
 
 
 ### :seedling: Chap.2 Generative Adversarial Representation Learning to Identify Anomalies

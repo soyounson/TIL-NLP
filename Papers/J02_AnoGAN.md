@@ -46,22 +46,24 @@
 - define an anomaly score, which is not needed in an inpainting task. 
 - the main difference of this paper to aforementioned anomaly detection work is the representative power of the generative model and the coupled mapping schema, which utilizes a trained DCGAN and **enable accurate discrimination between normal anatomy, and local anomalous appearance**. (:warning: how?)
 
-
 ### :seedling: Chap.2 Generative Adversarial Representation Learning to Identify Anomalies
 :warning: Instead of a single cost function optimization, it aims at the Nash equilibrium of costs, increasing the representattive power and specificity of the generative model, while at the same time becoming more accurate in classifying real-from generated data and improving the corresponding feature mapping.
 
 #### 2.1 Unsupervised manifold learning of normal anatomical variability
+- Train : GAN이용해서 manifold X 학습 (healthy anatomy인 <I<sub>m</sub>> 사용)
+- Test : <y<sub>n</sub>,l<sub>n</sub>> 여기서 y<sub>n</sub>은 unseen image이고, l<sub>n</sub>은 an array of binary image-wise ground truth labels, 즉 0 혹은 1이라는 값을 갖은 array임. 
+- 즉, test의 경우는 label존재
 **Encoding anatomical variability with a GANS** 
-
+- 
 
 
 ### :seedling: Chap.3 Experiments
 (Data, Data selection and preprocessing, Evaluation, Implementation details, )
 
 ### :seedling: Chap.4 Conclusion 
-- enable the identificatio nof anomalies on unseen data based on **unsupervised training of a model on healthy data**.
+- enable the identification of anomalies on unseen data based on **unsupervised training of a model on healthy data**.
 - be able to detect **different known anomalies (retinal fulid, HRF)**.
-- be expected to be capavle to discover **novel anomalies**
+- be expected to be capable to discover **novel anomalies**
 - (discovering anomalies at scale) enables the mining of data for marker candidates subject to further verification. 
 
 

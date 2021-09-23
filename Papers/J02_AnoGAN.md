@@ -48,6 +48,10 @@
 
 
 ### :seedling: Chap.2 Generative Adversarial Representation Learning to Identify Anomalies
+:warning: Instead of a single cost function optimization, it aims at the Nash equilibrium of costs, increasing the representattive power and specificity of the generative model, while at the same time becoming more accurate in classifying real-from generated data and improving the corresponding feature mapping.
+
+#### 2.1 Unsupervised manifold learning of normal anatomical variability
+**Encoding anatomical variability with a GANS** 
 
 
 

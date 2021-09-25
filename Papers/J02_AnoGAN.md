@@ -11,6 +11,9 @@
 - 수렴시 생성자의 표본은 실제 자료와 구분할 수 없을 정도이며, 판별자는 모든 점에서 1/2의 확률을 출력한다. 그러면 판별자를 폐기해도 된다. 
 (ref : Ian Goodfellow, Yoshua Bengio, Aaron Courville, Deep learning (2015))
 
+- Generator가 하는 일은 training 데이터와 유사한 '가짜' 이미지를 만들어내는 것입니다. Discriminator가 하는 일은 이미지를 본 뒤, 실제 training 데이터인지 generator로부터 생성된 가짜 이미지인지를 출력하는 것입니다. 트레이닝 동안, generator는 끊임없이 더 나은 가짜 이미지를 생성해 disciminator를 능가하려 노력하는 반면, discriminator는 진짜 이미지와 가짜 이미지를 더 잘 감지하고 분류하기 위해 노력합니다. 이 게임의 균형은 generator가 training 데이터에서 꺼내온 듯한 완벽한 가짜 이미지를 만들어 내고 있을 때이고, discriminator는 항상 generator의 결과가 진짜인지 가짜인지 50%의 신뢰도를 가지고 추측하도록 둔다. Discriminator를 시작으로 튜토리얼을 시작할 텐데, 몇 가지 표기법을 정의해봅시다. 지금부터 'x'를 이미지를 대표하는 데이터라고 부릅시다. D(x)는 x가 generator가 아닌 training 데이터에서 나왔을 확률을 출력하는 discriminator 네트워크이다. 우리는 이미지 데이터를 다루기 때문에 D(x)에 대한 입력의 크기(size)는 3 * 64 * 64입니다. 직관적으로 D(x)는 x가 training 데이터에서 나왔을 때 높고, generator로부터 만들어졌을 때 낮다. D(x)는 전통적인 이진 분류기 (binary classifier)로 생각할 수 있다. Generator를 위한 표기법으로는,  표준정규분포로부터 추출된 잠재 공간(latent space) 벡터를 'z'라고 하자. G(z)는 잠재 벡터 z를 데이터 공간(data-space)으로 매핑시켜주는 generator 함수이다. G의 목표는 training data의 p_data 분포를 추정하여, 그 추정 분포(p_g)로부터 가짜 샘플을 생성하는 것이다. 따라서, D(G(z))는 Generator의 아웃풋이 진짜 이미지일 확률을 의미한다. (* =가짜 이미지가 진짜 이미지로 판별될 확률) Goodfellow의 논문에 묘사된 것처럼,  D와 G는 D는 진짜와 가짜를 정확하게 구분하는 확률(log D(x))을 키우기 위해, G는 D가 G의 아웃풋을 가짜로 판단할 확률(log(1-D(G(x)))을 낮추는 minmax 게임을 한다. (ref. https://comlini8-8.tistory.com/7 )
+
+
 #### :leaves: GAN (Generative Adversarial Network) models 
 - GAN : 태초의 GAN은 FC layer을 사용. generator는 CNN을 사용해서 만듦.
 - DCGAN : pooling layer 사용하지 않고, stride size = 2로 해결함. bath norm, adam 사용 
@@ -50,11 +53,16 @@
 :warning: Instead of a single cost function optimization, it aims at the Nash equilibrium of costs, increasing the representattive power and specificity of the generative model, while at the same time becoming more accurate in classifying real-from generated data and improving the corresponding feature mapping.
 
 #### 2.1 Unsupervised manifold learning of normal anatomical variability
+- setup : M개가 세트인 의학 이미지 <I<sub>m</sub>> (healthy anatomy, m = 1...M, size = a x b), 여기서 K 2D image patches <x<sub>k,m</sub>> (size = c x c) 뽑아냄.
 - Train : GAN이용해서 manifold X 학습 (healthy anatomy인 <I<sub>m</sub>> 사용)
-- Test : <y<sub>n</sub>,l<sub>n</sub>> 여기서 y<sub>n</sub>은 unseen image이고, l<sub>n</sub>은 an array of binary image-wise ground truth labels, 즉 0 혹은 1이라는 값을 갖은 array임. 
+- Test : <y<sub>n</sub>,l<sub>n</sub>> 여기서 y<sub>n</sub> (size = c x c)은 unseen image이고, l<sub>n</sub>은 an array of binary image-wise ground truth labels, 즉 0 혹은 1이라는 값을 갖은 array임. 
 - 즉, test의 경우는 label존재
 **Encoding anatomical variability with a GANS** 
-- 
+- GAN : two adversarial modules, a generator G + a discriminator D
+- G : learn a distribution <p<sub>g</sub>> over data x via a mapping G(z) of sample z, 1D vectors of uniformly distributed input noise sampled from latent space, Z, to 2D images in the image space manifold X, which is populated by healthy examples.
+- G's architecture : convolutional decoder 와 같음.
+- D : a standard CNN that maps a 2D image to a single scalar value D(.)
+- D/G are simultaneously optimized through the follwoing two-player minimax game with value function V(G,D)
 
 
 ### :seedling: Chap.3 Experiments

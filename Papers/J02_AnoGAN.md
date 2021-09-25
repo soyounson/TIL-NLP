@@ -58,11 +58,27 @@
 - Test : <y<sub>n</sub>,l<sub>n</sub>> 여기서 y<sub>n</sub> (size = c x c)은 unseen image이고, l<sub>n</sub>은 an array of binary image-wise ground truth labels, 즉 0 혹은 1이라는 값을 갖은 array임. 
 - 즉, test의 경우는 label존재
 **Encoding anatomical variability with a GANS** 
+: GAN의 구성 및 D/G에 대한 설명
 - GAN : two adversarial modules, a generator G + a discriminator D
 - G : learn a distribution <p<sub>g</sub>> over data x via a mapping G(z) of sample z, 1D vectors of uniformly distributed input noise sampled from latent space, Z, to 2D images in the image space manifold X, which is populated by healthy examples.
 - G's architecture : convolutional decoder 와 같음.
 - D : a standard CNN that maps a 2D image to a single scalar value D(.)
 - D/G are simultaneously optimized through the follwoing two-player minimax game with value function V(G,D)
+
+**Mapping new Images to the Latent space**
+- G는 mapping을 배움 : G(z) = z → x (latent space representations, z → realistic (normal) image, x)
+- the degeree of similarity of x and G(z) depends on to which extent the query image following the data distribution <p<sub>g</sub>> that was used for training of the generator
+- define a loss function fot the mapping of new images to the latent space that comprises two components, a **residual loss** and a **discrimination loss**. 
+  * **residual loss** enforces the visual similarity between the generated image G(
+
+
+
+
+
+
+
+
+
 
 
 ### :seedling: Chap.3 Experiments

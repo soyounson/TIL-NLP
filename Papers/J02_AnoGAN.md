@@ -69,11 +69,14 @@
 - G는 mapping을 배움 : G(z) = z → x (latent space representations, z → realistic (normal) image, x)
 - the degeree of similarity of x and G(z) depends on to which extent the query image following the data distribution <p<sub>g</sub>> that was used for training of the generator
 - define a loss function fot the mapping of new images to the latent space that comprises two components, a **residual loss** and a **discrimination loss**. 
-  * **residual loss** enforces the visual similarity between the generated image G(
+  * **residual loss** enforces the visual similarity between the generated image G(<Z<sub>γ</sub>>) and query image x
+  * **discrimination loss** enforces the generated image G(<Z<sub>γ</sub>>) to lie on the learned manifold X
+- D and G are both utilized to adapt the coefficients of z via backpropagation. (역전파통해 z 계수 적응시키는데 사용됨.)
 
+**Residual loss**
+<L<sub>R</sub>>(<Z<sub>γ</sub>>) = Σ |x-G(<Z<sub>γ</sub>>)|
 
-
-
+**Discrimination loss**
 
 
 

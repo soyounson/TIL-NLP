@@ -60,37 +60,46 @@
 **Encoding anatomical variability with a GANS** 
 : GAN의 구성 및 D/G에 대한 설명
 - GAN : two adversarial modules, a generator G + a discriminator D
-- G : learn a distribution <p<sub>g</sub>> over data x via a mapping G(z) of sample z, 1D vectors of uniformly distributed input noise sampled from latent space, Z, to 2D images in the image space manifold X, which is populated by healthy examples.
+- G : learn a distribution p<sub>g</sub> over data x via a mapping G(z) of sample z, 1D vectors of uniformly distributed input noise sampled from latent space, Z, to 2D images in the image space manifold X, which is populated by healthy examples.
 - G's architecture : convolutional decoder 와 같음.
 - D : a standard CNN that maps a 2D image to a single scalar value D(.)
 - D/G are simultaneously optimized through the follwoing two-player minimax game with value function V(G,D)
 
-**Mapping new Images to the Latent space**
+#### 2.2 Mapping new Images to the Latent space
 - G는 mapping을 배움 : G(z) = z → x (latent space representations, z → realistic (normal) image, x)
-- the degeree of similarity of x and G(z) depends on to which extent the query image following the data distribution <p<sub>g</sub>> that was used for training of the generator
+- the degeree of similarity of x and G(z) depends on to which extent the query image following the data distribution p<sub>g</sub> that was used for training of the generator
 - define a loss function fot the mapping of new images to the latent space that comprises two components, a **residual loss** and a **discrimination loss**. 
-  * **residual loss** enforces the visual similarity between the generated image G(<Z<sub>γ</sub>>) and query image x
-  * **discrimination loss** enforces the generated image G(<Z<sub>γ</sub>>) to lie on the learned manifold X
+  * **residual loss** enforces the visual similarity between the generated image G(Z<sub>γ</sub>) and query image x
+  * **discrimination loss** enforces the generated image G(Z<sub>γ</sub>) to lie on the learned manifold X
 - D and G are both utilized to adapt the coefficients of z via backpropagation. (역전파통해 z 계수 적응시키는데 사용됨.)
 
 **Residual loss**
-<L<sub>R</sub>>(<Z<sub>γ</sub>>) = Σ |x-G(<Z<sub>γ</sub>>)|
+L<sub>R</sub>(Z<sub>γ</sub>) = Σ |x-G(Z<sub>γ</sub>)|
 
 **An improved discrimination loss based on feature matching** (기존 논문과의 차별성)
-- 기존에 D를 속이기 위해 <Z<sub>γ</sub>>를 업데이트 시켰는데, 이 논문에서는 G(<Z<sub>γ</sub>>)와 매치시키기위해서 <Z<sub>γ</sub>>를 업데이트 시킴.  이 방법은 feature matching technique에서 영감을 얻었는데, 이는 D부분에서의 overtraining으로 발생하는 GAN의 instability을 다룸.  기존에 D의 output을 극대화시켜 G의 parameters를 옵티마이징시켰던 것에 반해, 여기서는 **G가 training data와 가장 비슷한 statistics를 갖는 데이터를 생성해내도록 force함**. 즉, G부분에 타겟이 맞춰지게 됨. 
+- 기존에 D를 속이기 위해 Z<sub>γ</sub>를 업데이트 시켰는데, 이 논문에서는 G(Z<sub>γ</sub>)와 매치시키기위해서 Z<sub>γ</sub>를 업데이트 시킴.  이 방법은 feature matching technique에서 영감을 얻었는데, 이는 D부분에서의 overtraining으로 발생하는 GAN의 instability을 다룸.  기존에 D의 output을 극대화시켜 G의 parameters를 옵티마이징시켰던 것에 반해, 여기서는 **G가 training data와 가장 비슷한 statistics를 갖는 데이터를 생성해내도록 force함**. 즉, G부분에 타겟이 맞춰지게 됨. 
 - we do not adapt the training objective of the generator during adversarial training, but instead use the idea of feature matching to improve the mapping to the latent space. 
 - Instead of using the scalar output of the discriminator for computing the discrimination loss, we propose to use a richer intermediate feature representation of the discriminator and define the discrimination loss:
-<L<sub>D</sub>>(<Z<sub>γ</sub>>) = Σ |f(x)-f(G(<Z<sub>γ</sub>>))|
+L<sub>D</sub>(Z<sub>γ</sub>) = Σ |f(x)-f(G(Z<sub>γ</sub>))|
 
-. . . 
+> :warning: the output of an intermediate layer f(.) of the discriminator is used to specify the statistics of an input image. Based on this new loss term, the adaptation of the coordinates of z does not only rely on a hard decision of the trained discriminator, whether or not a generated image G(z<sub>γ</sub>) fits the learned distribution of normal images, but instead takes the rich information of the feature representation, which is learned by the discriminator during adversarial trainning, into account. In this sense our approach utilizes the trained discriminator not as classifier but as a feature extractor. 
+
 
 - latent space에 맵핑하기 위해, overall loss 는 (weighted sum에 의해 정의)
-L(<Z<sub>γ</sub>>) = (1-λ)<L<sub>R</sub>>(<Z<sub>γ</sub>>) + λ<L<sub>D</sub>>(<Z<sub>γ</sub>>)
+L(Z<sub>γ</sub>) = (1-λ)L<sub>R</sub>(Z<sub>γ</sub>) + λL<sub>D</sub>(Z<sub>γ</sub>)
 여기서 G와 D의 trained paramters는 fixed되어 있고, z만 backpropagation에 의해서 adapt됨.
 
-
-
-
+#### 2.3 Detection of anomalies
+여기서는 anomaly score, A(x)이용해서 이상을 발견/탐지함. 
+- **anomaly score, A(x)** : express the fit of a query image x to the model of normal images, can be directly derived from the mapping loss function.
+A(x) = (1-λ)R(x) + λD(x)
+where, R(x) : residual score, residual loss가 마지막 (Γ<sup>th</sup>)에서의 L<sub>R</sub>(Z<sub>Γ</sub>)
+       D(x) : discrimination score, discrimination loss가 마지막 (Γ<sup>th</sup>)에서의 L<sub>D</sub>(Z<sub>Γ</sub>)
+- anomaly score에 따라서 normal 과 anomal를 구분하는데, 
+  large anomaly score : anomalous images 
+  small anomaly score : training 과 굉장히 유사한 images, 즉 normal images의미
+- **residual image, X<sub>R</sub> = |x-G(Z<sub>Γ</sub>)|** : identification of anomalous regions within an image (이미지 안에서 이상부분을 찾는 것) 
+- 추가적으로, **reference anomaly score, A'(x) = (1-λ)R(x) + λD'(x)** where, reference discrimination score D'(x) = L<sub>D'</sub>(Z<sub>γ</sub>)
 
 ### :seedling: Chap.3 Experiments
 (Data, Data selection and preprocessing, Evaluation, Implementation details, )

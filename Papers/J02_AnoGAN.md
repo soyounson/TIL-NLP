@@ -111,10 +111,10 @@ where, R(x) : residual score, residual loss가 마지막 (Γ<sup>th</sup>)에서
 - (이하생략)
 
 **Evaluation**
-(1) (질적) We explored qualitatively whether the model can generate realistic images. This assessment was performed on image patches of healthy cases extracted from the training set or test set and on images of diseased cases extracted from the test set.
-(2) (양적) We evaluated quantitatively the anomaly detection accuracy of our approach on images extracted from the annotated test set.We based the anomaly detection on the **anomaly score A(x) or only on one of both components, on the residual score R(x) or on the discrimination score D(x)** and report **receiver operating characteristic (ROC) curves of the corresponding anomaly detection performance on image level**. Based on our proposed anomaly score A(x), we evaluated qualitatively the segmentation performance and if additional anomalies were identified.
-→ ROC 곡선 (수신자 조작 특성) : 트레이드오프 관계를 표현하기 위한 지표로 x축의 특이도에 대한 y축의 재현율 (민감도)를 표시. 
-(3) To provide more details of individual components' roles, and the gain by the proposed approach, we evaluated the effect on the anomaly detection performance, **when for manifold learning the adversarial training is not performed with a DCGAN but with an adversarial convolutional autoencoder (aCAE)** [16], while leaving the definition of the anomaly score unchanged. **An aCAE also implements a discriminator but replaces the generator by an encoder-decoder pipeline.** The depth of the components of the trained aCAE was comparable to the depth of our adversarial model. As a second alternative approach, denoted as GANR, we evaluated the anomaly detection performance, when the reference anomaly score A'(x), or the reference discrimination score D'(x) were utilized for anomaly scoring and the corresponding losses were used for the mapping from image space to latent space, while the pre-trained GAN parameters of the AnoGAN were used. We report ROC curves for both alternative approaches. Furthermore, we calculated sensitivity, specificity, precision, and recall at the optimal cut-off point on the ROC curves, identified through the Youden's index and report results for the AnoGan and for both alternative approaches.
+- (1) (질적) We explored qualitatively whether the model can generate realistic images. This assessment was performed on image patches of healthy cases extracted from the training set or test set and on images of diseased cases extracted from the test set.
+- (2) (양적) We evaluated quantitatively the anomaly detection accuracy of our approach on images extracted from the annotated test set.We based the anomaly detection on the **anomaly score A(x) or only on one of both components, on the residual score R(x) or on the discrimination score D(x)** and report **receiver operating characteristic (ROC) curves of the corresponding anomaly detection performance on image level**. Based on our proposed anomaly score A(x), we evaluated qualitatively the segmentation performance and if additional anomalies were identified.
+→ ROC 곡선 (수신자 조작 특성) : 트레이드오프 관계를 표현하기 위한 지표로 x축의 특이도에 대한 y축의 재현율 (민감도)를 표시.  
+- (3) To provide more details of individual components' roles, and the gain by the proposed approach, we evaluated the effect on the anomaly detection performance, **when for manifold learning the adversarial training is not performed with a DCGAN but with an adversarial convolutional autoencoder (aCAE)** [16], while leaving the definition of the anomaly score unchanged. **An aCAE also implements a discriminator but replaces the generator by an encoder-decoder pipeline.** The depth of the components of the trained aCAE was comparable to the depth of our adversarial model. As a second alternative approach, denoted as GANR, we evaluated the anomaly detection performance, when the reference anomaly score A'(x), or the reference discrimination score D'(x) were utilized for anomaly scoring and the corresponding losses were used for the mapping from image space to latent space, while the pre-trained GAN parameters of the AnoGAN were used. We report ROC curves for both alternative approaches. Furthermore, we calculated sensitivity, specificity, precision, and recall at the optimal cut-off point on the ROC curves, identified through the Youden's index and report results for the AnoGan and for both alternative approaches.
 
 **Implementation details**
 - DCGAN architecture w/ images of sizes 64 x 64 pixels
@@ -135,9 +135,12 @@ demonstrate the generative capavility of the DCGAN and the appropriateness of ou
 - anomalous images : the pairs of input images and generated images show obvious intensity or textural differences. The t-SNE embedding of normal and anomalous images in the feature representation of the last convolution layer of the discriminator that is utilized in the **discrimination loss**, illustrates the usability of the discriminator's features for anomaly detection and suggests that our AnoGAN learns a mearniful manifold of normal anatomical variability.
 
 **Can the model detect anomalies?**
-
+Fig. 4
 **How does the model compare to other approaches?**
-
+- GAN<sub>R</sub>, aCAE, AnoGAN
+- Although aCAEs simultaneously yield a generative model and a direct mapping to the latent space, which is advantageous in terms of runtimes during testing, this model showed worse performance on the anomaly detection task compared to the AnoGAN. It turned out that aCAEs tend to over-adapt on anomalous images.
+- Nevertheless, according to the AUC, computed based on the anomaly score, the AnoGAN and the GANR show comparable results (Figure 4(a)). This has to be attributed to the good performance of the residual score R(x). A good anomaly detection performance (cf. PD in Figure 4(a) and Table 1) can be obtained when the mapping to the latent space is skipped and a binary decision is derived from the discriminator output, conditioned directly on the query image.
+Table 1 
 
 
 ### :seedling: Chap.4 Conclusion 

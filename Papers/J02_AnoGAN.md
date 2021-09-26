@@ -104,6 +104,23 @@ where, R(x) : residual score, residual loss가 마지막 (Γ<sup>th</sup>)에서
 ### :seedling: Chap.3 Experiments
 (Data, Data selection and preprocessing, Evaluation, Implementation details, )
 
+- total volume resolution : 496 x 512 x 49 voxels (in x,y, and z dir)
+- train : 270 clinical OCT volumes of healthy subjects
+- test : 10 additional healthy cases + 10 pathological cases 
+- preprocess : gray values were normalized to range from -1 to 1 
+- 
+
+
+#### 3.1 Results
+
+**Can the model generate realistic images?**
+
+**Can the model detect anomalies?**
+
+**How does the model compare to other approaches?**
+
+
+
 ### :seedling: Chap.4 Conclusion 
 - enable the identification of anomalies on unseen data based on **unsupervised training of a model on healthy data**.
 - be able to detect **different known anomalies (retinal fulid, HRF)**.

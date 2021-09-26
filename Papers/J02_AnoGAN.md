@@ -76,9 +76,17 @@
 **Residual loss**
 <L<sub>R</sub>>(<Z<sub>γ</sub>>) = Σ |x-G(<Z<sub>γ</sub>>)|
 
-**Discrimination loss**
+**An improved discrimination loss based on feature matching** (기존 논문과의 차별성)
+- 기존에 D를 속이기 위해 <Z<sub>γ</sub>>를 업데이트 시켰는데, 이 논문에서는 G(<Z<sub>γ</sub>>)와 매치시키기위해서 <Z<sub>γ</sub>>를 업데이트 시킴.  이 방법은 feature matching technique에서 영감을 얻었는데, 이는 D부분에서의 overtraining으로 발생하는 GAN의 instability을 다룸.  기존에 D의 output을 극대화시켜 G의 parameters를 옵티마이징시켰던 것에 반해, 여기서는 **G가 training data와 가장 비슷한 statistics를 갖는 데이터를 생성해내도록 force함**. 즉, G부분에 타겟이 맞춰지게 됨. 
+- we do not adapt the training objective of the generator during adversarial training, but instead use the idea of feature matching to improve the mapping to the latent space. 
+- Instead of using the scalar output of the discriminator for computing the discrimination loss, we propose to use a richer intermediate feature representation of the discriminator and define the discrimination loss:
+<L<sub>D</sub>>(<Z<sub>γ</sub>>) = Σ |f(x)-f(G(<Z<sub>γ</sub>>))|
 
+. . . 
 
+- latent space에 맵핑하기 위해, overall loss 는 (weighted sum에 의해 정의)
+L(<Z<sub>γ</sub>>) = (1-λ)<L<sub>R</sub>>(<Z<sub>γ</sub>>) + λ<L<sub>D</sub>>(<Z<sub>γ</sub>>)
+여기서 G와 D의 trained paramters는 fixed되어 있고, z만 backpropagation에 의해서 adapt됨.
 
 
 

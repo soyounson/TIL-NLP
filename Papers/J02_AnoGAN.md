@@ -150,3 +150,5 @@ Table 1
 - (discovering anomalies at scale) enables the mining of data for marker candidates subject to further verification. 
 
 
+### 🔋 code 
+check : https://github.com/seungjunlee96/AnoGAN-pytorch

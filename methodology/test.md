@@ -15,7 +15,7 @@ min, max가 다 있는것 이는
 convex, concave 와 연관
 
 여기서, convex,concave와 saddle p't사이의 연관성에 대해서 생각해 볼 것
-
+https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.178.3064&rep=rep1&type=pdf
 
 -> 연관된것이 SVM의 
 generated optimal control 제어 
@@ -28,8 +28,18 @@ V(D,G) = E_(x~Pdata(x))[logD(x)]+E(z~Pz(z))[log(1-D(G(z))]
 V(D,G) = E_(z~Pz(z))[log[D(x) * (1-D(G(z))]]
 여기서 D(x)* (1-D(G(z)))가 의미하는 바는?
 D(x)는 확률 
+x는 변수, 주사위 던져지는 수를 의미함. 즉, 1 ~ 6
 Joint probability -> 베이지안 강의 확인하기
 
+minmax{V(D,G)} => durability 
+??? =>  optimization?
+D(x)* (1-D(G(z))에서 둘다 만족해야하는 조건이므로, 그냥 convex 혹은 concave로는 도저희 문제를 풀수가 없고, saddle p't처럼 둘다 조건을 만족해야만 하는 조건에서 문제를 풀수 있다. => saddle p't convex, concave (ref. https://www.offconvex.org/2016/03/22/saddlepoints/)
+
+cross entropy => https://medium.com/unpackai/cross-entropy-loss-in-ml-d9f22fc11fe0
+
+
+
+https://www.slideshare.net/NaverEngineering/1-gangenerative-adversarial-network
 
 
 https://everyday-deeplearning.tistory.com/entry/%EC%B4%88-%EA%B0%84%EB%8B%A8-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0Generative-Models-GAN

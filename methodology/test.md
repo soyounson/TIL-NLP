@@ -20,3 +20,18 @@ convex, concave 와 연관
 -> 연관된것이 SVM의 
 generated optimal control 제어 
 convex, concave and saddle p't
+
+
+110321
+
+V(D,G) = E_(x~Pdata(x))[logD(x)]+E(z~Pz(z))[log(1-D(G(z))]
+V(D,G) = E_(z~Pz(z))[log[D(x) * (1-D(G(z))]]
+여기서 D(x)* (1-D(G(z)))가 의미하는 바는?
+D(x)는 확률 
+Joint probability -> 베이지안 강의 확인하기
+
+
+
+https://everyday-deeplearning.tistory.com/entry/%EC%B4%88-%EA%B0%84%EB%8B%A8-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0Generative-Models-GAN
+https://jaaamj.tistory.com/85
+https://machinelearningmastery.com/a-gentle-introduction-to-method-of-lagrange-multipliers/

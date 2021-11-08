@@ -88,6 +88,15 @@ ref. https://bioinformaticsandme.tistory.com/47
 베이지안 딥러닝에 대한 포괄적 설명 
 https://ichi.pro/ko/beijian-dib-leoning-e-daehan-pogwaljeog-in-sogae-19936594383326
 
+베이지안이론 : https://bioinformaticsandme.tistory.com/47
+eigendecomposition : https://jeongchul.tistory.com/603
+고유벡터, 고윳값 : https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%9C%B3%EA%B0%92%EA%B3%BC_%EA%B3%A0%EC%9C%A0_%EB%B2%A1%ED%84%B0
+http://matrix.skku.ac.kr/math4ai/Math4AI.pdf
+SVD + saddle p't : https://m.blog.naver.com/skkong89/221828535184
+https://angeloyeo.github.io/2020/06/17/Hessian.html
+svd : https://web.mit.edu/be.400/www/SVD/Singular_Value_Decomposition.htm
+
+
 GAN에서 D(x)가 likelihood인 이유? 
 
 

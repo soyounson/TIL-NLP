@@ -104,3 +104,11 @@ likelihood : https://arxiv.org/pdf/1707.07530.pdf
 GAN+ likelihood : https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network
 https://kakalabblog.wordpress.com/2017/07/27/gan-tutorial-2016/
 
+
+SSV(Singularity, Saddle p't, Value fn)
+
+regression : Lasso, Ridge
+Prior probablity
+
+Bayesian theorem : prior (assumption, 어떤 조건) * likelihood = posterior (구하고자하는 바)
+

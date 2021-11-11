@@ -67,9 +67,12 @@ Understand Bayes Rule, Likelihood, Prior and Posterior : https://towardsdatascie
 
 110821
 
-probability vs statistics 
-probability는 common sense에 기반하고 있고,
-statistics는 experience에 기반하고 있다. 
+> probability vs statistics 
+> 
+> "probability"는 "common sense"에 기반하고 있고,
+> 
+> "statistics"는 "experience"에 기반하고 있다. 
+
 왜 Bayesian theorem이 나왓지?
 
 확률론과 통계학에서, 베이즈 정리(영어: Bayes’ theorem)는 두 확률 변수의 사전 확률과 사후 확률 사이의 관계를 나타내는 정리다. 베이즈 확률론 해석에 따르면 베이즈 정리는 사전확률로부터 사후확률을 구할 수 있다.[1]

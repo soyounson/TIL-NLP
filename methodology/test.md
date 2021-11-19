@@ -115,3 +115,7 @@ Prior probablity
 
 Bayesian theorem : prior (assumption, 어떤 조건) * likelihood = posterior (구하고자하는 바)
 
+linear regression : a workhorse of data science 
+Despite the prevalence of more complicated and fancier models in recent years, linear regression remains hard to beat because of its versatility, robustness, and explainability.
+It’s a simple but powerful model that just gets the job done. And if you want to go into a quantitative field, you will need to understand how it works.
+(ref. https://towardsdatascience.com/understanding-linear-regression-94a6ab9595de )

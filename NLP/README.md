@@ -9,7 +9,7 @@
 - [ ] EDA 
 - [ ] Methodologies
 
-#### ☺︎ Dataset 
+### ☺︎ Dataset 
 데이터셋에 대한 이해가 필요함 
 
 #### ☻ Data Files [1]
@@ -17,7 +17,7 @@
 + test.csv : the test set
 + sample_submission.csv : a sample submission file in the correct format
 
-#### ☺︎ dataset [1]
+#### ☻ dataset [1]
 데이터 셋의 columns은 아래와 같고, 
 
 + id : a unique identifier for each tweet
@@ -28,7 +28,7 @@
 
 각 파일별 차이가 존재하는데 test.csv의 경우 4개의 columns이 존재하고, train.csv의 경우 label (target) 까지 총 5개의 columns이 존재
 
-#### ☺︎ EDA [3]
+#### ☻ Exploratory Data Analysis, EDA [3]
 EDA는 target이 1과 0으로 나눠서 data distribution 및 visualization을 진행하였다. 
 
 + number of characters, words in tweets
@@ -38,21 +38,40 @@ EDA는 target이 1과 0으로 나눠서 data distribution 및 visualization을 �
 + common words? : 어떤 단어들이 많이 사용되었는지 확인 
 + Ngram analysis : do a bigram (n=2) analysis over the tweets
 ```
-vec = CountVectorizer(ngram_rang
+vec = CountVectorizer(ngram_range=(2, 2)).fit(corpus)
+bag_of_words = vec.transform(corpus)
+```
+#### ☻ Data cleaning 
+basic cleaning such as **spelling correction,removing punctuations,removing html tags and emojis etc.***
++ removing urls
++ removing HTML tags
++ removing Emojis
++ removing punctuations
++ spelling correction 
 
+#### ☻ GloVe for Vecttorization 
+use GloVe pretrained corpus model to represent our words.It is available in 3 varieties 
 
+글로브(Global Vectors for Word Representation, GloVe)는 카운트 기반과 예측 기반을 모두 사용하는 방법론으로 2014년에 미국 스탠포드대학에서 개발한 단어 임베딩 방법론입니다. 앞서 학습하였던 기존의 카운트 기반의 LSA(Latent Semantic Analysis)와 예측 기반의 Word2Vec의 단점을 지적하며 이를 보완한다는 목적으로 나왔고, 실제로도 Word2Vec만큼 뛰어난 성능을 보여줍니다. 현재까지의 연구에 따르면 단정적으로 Word2Vec와 GloVe 중에서 어떤 것이 더 뛰어나다고 말할 수는 없고, 이 두 가지 전부를 사용해보고 성능이 더 좋은 것을 사용하는 것이 바람직합니다.
 
+### ☺︎ Baseline Methodologies
 
-#### ☺︎ Methodologies
+embedding + LSTM 모델 만들고,  
+```
+model.add(embedding)
+model.add(SpatialDropout1D(0.2))
+model.add(LSTM(64, dropout=0.2, recurrent_dropout=0.2))
+model.add(Dense(1, activation='sigmoid'))
 
-
-
+optimzer=Adam(learning_rate=1e-5)
+model.compile(loss='binary_crossentropy',optimizer=optimzer,metrics=['accuracy'])
+```
 
 ### ref 
 [1] https://www.kaggle.com/competitions/nlp-getting-started/data
 [2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html
 [3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove
-
+[4] https://wikidocs.net/22885
 
 
 

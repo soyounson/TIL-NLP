@@ -1,13 +1,12 @@
 # Natural Language Processing with Disaster Tweets 
 
-written by Soyoun Son 
-Date : 050222
+>written by Soyoun Son\
+>Date : 050222
 
 
 🦆 https://www.kaggle.com/c/nlp-getting-started
 
-> problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.
-(즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제) [1,2]
+> problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.\ 문제: 즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제 [1,2]
 
 - [x] Dataset
 - [x] EDA 
@@ -199,7 +198,6 @@ epoch 1-5 : 성능은 앞단에서 결정된다는 것을 기반으로 생각한
 
 hyperparatmer 튜닝을 AutoML이 다해줌?
 
-
 더 좋은 성능을 갖고 있다고 해서 좋은 모델이라고 볼수 있는가? 
 모집단에서 샘플을 뽑아서 확인할때, 그 샘플이 모집단을 그대로 반영하고 있는 것일까? 
 
@@ -208,11 +206,39 @@ LSTM, simple RNN, word2Vec w/ Gensim, BERT,Voting
 -> 오답을 봐서 (점수가 비슷하더라도) 
 
 오답이 몰려잇다하면 합치면
-엑스쥐부스트 : 오답을 줄이는 모델
+엑스쥐부스트 : 오답을 줄이는 모델, 대신 과적합 잘됨.
 
 LSTM : 맨 뒤에
 BERT, simpleRNN : 맨앞에
 Glove : 합쳐서 가능?
+
+-------------
+engineering : 모델을 적용해서 데이터를 분석하고 고쳐가는 방법 
+
+***자연어 처리에 대해서 내부적인 main features***
+1. TF 
+2. 단어와의 거리 
+3. 단어의 순서/방향
+
+마스크 모델? 
+
+***문제 해결 방법***
+
+1. 읽어보고, 라벨링이 가능한가? 언어를 적용할수 있는지?
+2. Bert로 가는지? 아님 구조적으로 가야하는지? 
+승부는 전처리에서 나온다.
+Hyperparameter : AutoML, optuna 
+약어같은 경우는 어떤식으로? Bert에서 잘못인식할수 있을듯
+단어를 겹치게 하면 
+마킹? 마스킹을 걸어놓음 
+베이스라인을 하고 오답을 보면서 맞춰가면서 이해함. 
+
+
+
+
+
+
+
 -----------------------------------------------------------
 음성인식 legacy model 
 음성 신호를 fft로 변환하고 mel spectrogram 으로 image 뽑은 다음에 그 이미지로 감성분류

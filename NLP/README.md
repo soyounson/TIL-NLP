@@ -35,10 +35,11 @@ EDA는 target이 1과 0으로 나눠서 data distribution 및 visualization을 �
 + average word lenght in a tweet
 + common stopwords in tweets
 + analyzing punctuations 
-+ common words? : 어떤 단어들이 
-+ common stop
-+ common stopwords in tweetsㅁ
-+ common stopwords in twe
++ common words? : 어떤 단어들이 많이 사용되었는지 확인 
++ Ngram analysis : do a bigram (n=2) analysis over the tweets
+```
+vec = CountVectorizer(ngram_rang
+
 
 
 
@@ -51,3 +52,19 @@ EDA는 target이 1과 0으로 나눠서 data distribution 및 visualization을 �
 [1] https://www.kaggle.com/competitions/nlp-getting-started/data
 [2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html
 [3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove
+
+
+
+
+음성인식 legacy model 
+음성 신호를 fft로 변환하고 mel spectrogram 으로 image 뽑은 다음에 그 이미지로 감성분류
+nlp에서 음성인식은 작은 분파이고, signal processing 이면 음성인식쪽이 더 맞음
+NLP는 model architecture 쪽에 더 관심이 많음
+ASR (Automated Speech Recognition) 
+
+HMM (Hidden Markov Model) +GMM (Gaussian Mixture Model) -> RNN+GMM -> RNN -> Transformer -> Wav2Vec
+RNN-> Transformer 
+
+http://speech.cbnu.ac.kr/
+
+NLP : ELMO -> BERT -> GPT2 -> GPT3

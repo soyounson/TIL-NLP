@@ -28,6 +28,8 @@
 
 각 파일별 차이가 존재하는데 test.csv의 경우 4개의 columns이 존재하고, train.csv의 경우 label (target) 까지 총 5개의 columns이 존재
 
+> id, keyword, text 가 중요한 것 
+
 #### ☻ Exploratory Data Analysis, EDA [3]
 EDA는 target이 1과 0으로 나눠서 data distribution 및 visualization을 진행하였다. 
 
@@ -84,6 +86,23 @@ y_pre=model.predict(test)
 
 [4] https://wikidocs.net/22885
 
+--------------------------------------------------------------
+[NLP preprocess](https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z/notebook) 
+
+1. read and explore data 
+2. text cleaning 
+capitalization : 대문자-> 소문자 
+expand the contractions
+remove noise, punctuations
+특수문자는 character로 바꿈 
+한국어로 잡업할때는 capitalization, expand the contractions부분이 필요하지 않음 
+3. text pre-processing 
++ tokenization 
++ remove stop words : nltk에 tokenizer 사전이 존재. 한국어의 경우는 POS tagging 이후에 진행
++ stemming : 어간추출 
++ POS tagging : 
++ Lemmatization 
++ (optional) language detection 
 
 
 

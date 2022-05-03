@@ -2,19 +2,8 @@
 
 Track what I've learned.
 
-### ☺︎ Papers
-> 관심분야 논문 읽고 정리하기
 
-```
-DeepAnT : (2019) A Deep Learning Approach for Unsupervised Anomaly Detection in Time Series 
-AnoGAN : (2017) Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery
-GANomaly : (2018) GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training
-```
-ref: https://github.com/kyugorithm/TIL/tree/main/journal [21,22]
-
-### ☺︎ Methodology
-> explore ML/DL methodology 
-```
-LSTM/CuDNNLSTM
-```
-
+- [ ] [NLP](https://github.com/soyounson/TIL/blob/main/NLP/README.md) : 풀잎스쿨에서 공부하는 NLP에 대해서 공부한 부분을 정리
+- [ ] [Paper](https://github.com/soyounson/TIL/tree/main/Papers) : 기존에 anomaly detection 관련해서 논문 읽었던 것 정리
+- [ ] Books
+- [ ] Methodologies 

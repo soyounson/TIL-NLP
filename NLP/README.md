@@ -6,8 +6,8 @@
 (즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제) [1,2]
 
 - [x] Dataset
-- [ ] EDA 
-- [ ] Methodologies
+- [x] EDA 
+- [x] Methodologies
 
 ### ☺︎ Dataset 
 데이터셋에 대한 이해가 필요함 

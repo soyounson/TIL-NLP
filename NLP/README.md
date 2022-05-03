@@ -1,5 +1,9 @@
 # Natural Language Processing with Disaster Tweets 
 
+written by Soyoun Son 
+Date : 050222
+
+
 🦆 https://www.kaggle.com/c/nlp-getting-started
 
 > problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.
@@ -196,9 +200,19 @@ epoch 1-5 : 성능은 앞단에서 결정된다는 것을 기반으로 생각한
 hyperparatmer 튜닝을 AutoML이 다해줌?
 
 
+더 좋은 성능을 갖고 있다고 해서 좋은 모델이라고 볼수 있는가? 
+모집단에서 샘플을 뽑아서 확인할때, 그 샘플이 모집단을 그대로 반영하고 있는 것일까? 
 
+좋은 성적 얻기 위한 모델 [ref](https://github.com/MLFS19-NLP/KaggleNotebooks/blob/main/nlp-a-gentle-introduction-lstm-word2vec-bert.ipynb)
+LSTM, simple RNN, word2Vec w/ Gensim, BERT,Voting
+-> 오답을 봐서 (점수가 비슷하더라도) 
 
+오답이 몰려잇다하면 합치면
+엑스쥐부스트 : 오답을 줄이는 모델
 
+LSTM : 맨 뒤에
+BERT, simpleRNN : 맨앞에
+Glove : 합쳐서 가능?
 -----------------------------------------------------------
 음성인식 legacy model 
 음성 신호를 fft로 변환하고 mel spectrogram 으로 image 뽑은 다음에 그 이미지로 감성분류

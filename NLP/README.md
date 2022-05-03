@@ -69,12 +69,19 @@ model.compile(loss='binary_crossentropy',optimizer=optimzer,metrics=['accuracy']
 
 ### ref 
 [1] https://www.kaggle.com/competitions/nlp-getting-started/data
+
 [2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html
+
 [3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove
+
 [4] https://wikidocs.net/22885
 
 
 
+
+
+
+-----------------------------------------------------------
 음성인식 legacy model 
 음성 신호를 fft로 변환하고 mel spectrogram 으로 image 뽑은 다음에 그 이미지로 감성분류
 nlp에서 음성인식은 작은 분파이고, signal processing 이면 음성인식쪽이 더 맞음

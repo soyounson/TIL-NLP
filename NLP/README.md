@@ -49,7 +49,7 @@ basic cleaning such as **spelling correction,removing punctuations,removing html
 + removing punctuations
 + spelling correction 
 
-#### ☻ GloVe for Vecttorization 
+#### ☻ GloVe for Vecttorization [4]
 use GloVe pretrained corpus model to represent our words.It is available in 3 varieties 
 
 글로브(Global Vectors for Word Representation, GloVe)는 카운트 기반과 예측 기반을 모두 사용하는 방법론으로 2014년에 미국 스탠포드대학에서 개발한 단어 임베딩 방법론입니다. 앞서 학습하였던 기존의 카운트 기반의 LSA(Latent Semantic Analysis)와 예측 기반의 Word2Vec의 단점을 지적하며 이를 보완한다는 목적으로 나왔고, 실제로도 Word2Vec만큼 뛰어난 성능을 보여줍니다. 현재까지의 연구에 따르면 단정적으로 Word2Vec와 GloVe 중에서 어떤 것이 더 뛰어나다고 말할 수는 없고, 이 두 가지 전부를 사용해보고 성능이 더 좋은 것을 사용하는 것이 바람직합니다.
@@ -65,6 +65,14 @@ model.add(Dense(1, activation='sigmoid'))
 
 optimzer=Adam(learning_rate=1e-5)
 model.compile(loss='binary_crossentropy',optimizer=optimzer,metrics=['accuracy'])
+```
+데이터를 train/test로 나누고, training 및 prediction까지 진행함. 
+
+```
+X_train,X_test,y_train,y_test=train_test_split(train,tweet['target'].values,test_size=0.15)
+
+history=model.fit(X_train,y_train,batch_size=4,epochs=15,validation_data=(X_test,y_test),verbose=2)
+y_pre=model.predict(test)
 ```
 
 ### ref 

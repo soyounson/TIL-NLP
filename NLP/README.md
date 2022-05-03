@@ -92,6 +92,9 @@ y_pre=model.predict(test)
 --------------------------------------------------------------
 ## 🌱 풀잎스쿨 (5월 2일) 
 
+서로 같이 논의된 부분 및 공부한 것에 대해서 적음
+
+
 [NLP preprocess](https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z/notebook) 
 
 1. read and explore data 
@@ -233,7 +236,7 @@ Hyperparameter : AutoML, optuna
 마킹? 마스킹을 걸어놓음 
 베이스라인을 하고 오답을 보면서 맞춰가면서 이해함. 
 
-
+Bert의 토큰제한화 
 
 
 

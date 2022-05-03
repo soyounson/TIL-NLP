@@ -178,11 +178,22 @@ shuffle : 데이터가 뭔가 연속적으로 비슷한 형태라면 그것을 �
 여전히 도메인이 중요. 도메인에서 많이 쓰는 언어가 단어로 할당됨?
 
 
+### kaggle notebook을 github으로 갖고 오는 경우 
+https://www.kaggle.com/product-feedback/295170
+
+https://somjang.tistory.com/category/Kaggle/Real%20or%20Not%3F%20NLP%20with%20Disaster%20Tweets
 
 
+목적 최적화된 모델 찾는것?
+Gridserch CV로 hyperparameter?
+전처리 작업을 진행안하고
+전처리작업하고 진행하는 것이 아니라, 전처리를 뒤에서 확인하는 것?
+비교하는 것은 accuracy?
+score? 20%에 어떤것들이 틀렸는지? 그것을 확인하는 것?
+모델에 따라서 못 맞추는 것들이 다르지 않을까? 
+epoch 1-5 : 성능은 앞단에서 결정된다는 것을 기반으로 생각한건가? 
 
-
-
+hyperparatmer 튜닝을 AutoML이 다해줌?
 
 
 

@@ -87,6 +87,8 @@ y_pre=model.predict(test)
 [4] https://wikidocs.net/22885
 
 --------------------------------------------------------------
+## 🌱 풀잎스쿨 (5월 2일) 
+
 [NLP preprocess](https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z/notebook) 
 
 1. read and explore data 
@@ -99,10 +101,45 @@ remove noise, punctuations
 3. text pre-processing 
 + tokenization 
 + remove stop words : nltk에 tokenizer 사전이 존재. 한국어의 경우는 POS tagging 이후에 진행
-+ stemming : 어간추출 
-+ POS tagging : 
-+ Lemmatization 
++ stemming : 어간추출, 분석결과가 안좋았을때 하는 경우가 일반적 
++ POS tagging : 품사를 지정하는 것. 동사/명사/... 문맥적으로 잘 파악할수 있도록 하는 과정. 품사에 따라서 의미가 달라지는 경우가 발생. 한국어의 경우 KoNLPy
++ Lemmatization : 표제어 추출. 기본형으로 바꿔주는 과정. 따라서 품사 지정하는 PoS tagging한 후에 진행해야 함. 
 + (optional) language detection 
+
+한국어의 경우 토큰화-> POS tagging -> stemming/lemmatization -> remove stop words
+한국어의 경우 표제어 추출, 어간추출의 차이가 많이 없고, 어간추출이 그나마 더 많이 사용됨
+
+4. Text Feature Extraction 
+(1) weighted words - BOW
+- countvectorizer
+- TF-IDF
+카운팅하지만, 위치정보를 잃음. 그래서 의미적 유사성 파악 불가 
+(2) word embedding 
+- word2vec   -> gensim 
+- Glove
+- FastText
+- Bert : transformer 30억개 이상의 단어를 미리 학습시킨후, 본인의 테스크에 따라서 fine tunning을 하면 정확도가 높음. 
+(3) comparison of feature extraction techinique  
+
+-> 어떤 의미있는 feature을 뽑아낼수 있을까? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

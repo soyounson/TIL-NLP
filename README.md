@@ -10,9 +10,4 @@
 - [ ] [02. Feature Engineering](https://github.com/soyounson/TIL/blob/main/%5BNLP%5D02_NLP_Feature_Engineering)
 
 
-### 📲 App study group
-💡 [organization](https://github.com/app-study)
-
-- [ ] [050422: 1st meeting](https://github.com/soyounson/TIL/blob/main/%5BApp%5DDiscussion)
-
 

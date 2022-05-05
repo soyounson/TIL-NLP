@@ -1,10 +1,10 @@
-# Natural Language Processing with Disaster Tweets 
+# 💙 Natural Language Processing with Disaster Tweets 
 
 **written by Soyoun Son**         
 **Date : 050222**
 
 
-🦆 https://www.kaggle.com/c/nlp-getting-started
+#### 🦆 Kaggle ref : https://www.kaggle.com/c/nlp-getting-started
 
 > + problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.     
 + 문제: 즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제 [1,2]

@@ -8,9 +8,8 @@
 ## 🌱 풀잎스쿨 (5월 9일)
 
 ### ☺︎ Content
-- [x] NLP preprocess
-- [x] 개념 정리 : TF-IDF
-- [x] 10 steps for challenging and improving NLP model
+- [x] Feature Engineering 
+- [ ] What we will take
 - [x] Discussion
 
 

@@ -1,4 +1,4 @@
-# 💙 Natural Language Processing with Disaster Tweets 
+# 🌋 Natural Language Processing with Disaster Tweets 
 
 **written by Soyoun Son**         
 **Date : 050222**

@@ -1,11 +1,26 @@
-NLP w/DL : 캐글 첫 도전하기
-notion, 노트북 & 디스커션에 정리하고자 하는 내용을 정리하는 것을 목적으로 함. 
+# 🌋 2nd meeting : Natural Language Processing with Disaster Tweets 
+
+**written by Soyoun Son**         
+**Date : 050522**
+
+#### notion ref : https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d
+
+## 🌱 풀잎스쿨 (5월 9일)
+
+### ☺︎ Content
+- [x] NLP preprocess
+- [x] 개념 정리 : TF-IDF
+- [x] 10 steps for challenging and improving NLP model
+- [x] Discussion
+
+
+### ☺︎ 
 
 
 
 
 
-https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d
+
 
 # Feature Engineering
 

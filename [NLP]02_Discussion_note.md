@@ -1,8 +1,7 @@
 # Natural Language Processing with Disaster Tweets 
 
->written by Soyoun Son\
->Date : 050222
-
+**written by Soyoun Son**         
+**Date : 050222**
 
 🦆 https://www.kaggle.com/c/nlp-getting-started
 
@@ -10,85 +9,89 @@
 
 서로 같이 논의된 부분 및 공부한 것에 대해서 적음
 
+### ☺︎ Content
+- [x] NLP preprocess
+- [x] 개념 정리 : TF-IDF
+- [x] 10 steps for challenging and improving NLP model
+- [x] Discussion
 
-[NLP preprocess](https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z/notebook) 
 
-1. read and explore data 
-2. text cleaning 
-capitalization : 대문자-> 소문자 
-expand the contractions
-remove noise, punctuations
-특수문자는 character로 바꿈 
-한국어로 잡업할때는 capitalization, expand the contractions부분이 필요하지 않음 
-3. text pre-processing 
-+ tokenization 
-+ remove stop words : nltk에 tokenizer 사전이 존재. 한국어의 경우는 POS tagging 이후에 진행
-+ stemming : 어간추출, 분석결과가 안좋았을때 하는 경우가 일반적 
-+ POS tagging : 품사를 지정하는 것. 동사/명사/... 문맥적으로 잘 파악할수 있도록 하는 과정. 품사에 따라서 의미가 달라지는 경우가 발생. 한국어의 경우 KoNLPy
-+ Lemmatization : 표제어 추출. 기본형으로 바꿔주는 과정. 따라서 품사 지정하는 PoS tagging한 후에 진행해야 함. 
-+ (optional) language detection 
+### ☺︎ [NLP preprocess](https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z/notebook) 
 
-한국어의 경우 토큰화-> POS tagging -> stemming/lemmatization -> remove stop words
++ read and explore data 
++ text cleaning 
+
+| capitalization | expand the contractions | remove noise, punctuations | 특수문자는 character로 바꿈 | 
+| -------------- | ----------------------- | -------------------------- | ----------------------- |
+| 대문자-> 소문자 |  |   |   |
+
+
+> 한국어로 잡업할때는 capitalization, expand the contractions부분이 필요하지 않음      
+
++ text pre-processing 
+  - tokenization 
+  - remove stop words : nltk에 tokenizer 사전이 존재. 한국어의 경우는 POS tagging 이후에 진행
+  - stemming : 어간추출, 분석결과가 안좋았을때 하는 경우가 일반적 
+  - POS tagging : 품사를 지정하는 것. 동사/명사/... 문맥적으로 잘 파악할수 있도록 하는 과정. 품사에 따라서 의미가 달라지는 경우가 발생. 한국어의 경우 KoNLPy
+  - Lemmatization : 표제어 추출. 기본형으로 바꿔주는 과정. 따라서 품사 지정하는 PoS tagging한 후에 진행해야 함. 
+  - (optional) language detection 
+
+> 한국어의 경우 토큰화-> POS tagging -> stemming/lemmatization -> remove stop words         
 한국어의 경우 표제어 추출, 어간추출의 차이가 많이 없고, 어간추출이 그나마 더 많이 사용됨
 
-4. Text Feature Extraction 
-(1) weighted words - BOW
-- countvectorizer
-- TF-IDF
-카운팅하지만, 위치정보를 잃음. 그래서 의미적 유사성 파악 불가 
-(2) word embedding 
-- word2vec   -> gensim 
-- Glove
-- FastText
-- Bert : transformer 30억개 이상의 단어를 미리 학습시킨후, 본인의 테스크에 따라서 fine tunning을 하면 정확도가 높음. 
-(3) comparison of feature extraction techinique  
++ Text Feature Extraction 
+  + weighted words - BOW
+    - countvectorizer
+    - TF-IDF
 
--> 어떤 의미있는 feature을 뽑아낼수 있을까? 
+> 한계 : 카운팅하지만, 위치정보를 잃음. 그래서 의미적 유사성 파악 불가      
+
++ word embedding 
+  - word2vec -> gensim 
+  - Glove
+  - FastText
+  - Bert : transformer 30억개 이상의 단어를 미리 학습시킨후, 본인의 테스크에 따라서 fine tunning을 하면 정확도가 높음. 
+
++ comparison of feature extraction techinique  
 
 예로 Bert의 한계가 존재한다면, 
-
 이런 문제였을때는 다른 것 사용 할 것
 다른 접근법: 각 방법의 약점을 확인하면 좋을 듯
 Bert (Transformer)만 사용하다보니, 기존 모델들 RNN
 A : architecture 
 
 
-++++++++++
-
-[TF-IDF 개념](https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d?p=f0a9b205d22545fe9e0707b8493f57ac) 
-(1) 전처리 작업
+### ☺︎ [개념 정리 : TF-IDF](https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d?p=f0a9b205d22545fe9e0707b8493f57ac) 
++ 전처리 작업
 - 긍정문서/부정문서
 - tf-idf 
 - 등장 키워드에 대한 scoring 
-(2) 모델 
++ 모델 
 - decision tree, regression 
-실무 적용시 : 재난의 유무가 아니라 재난의 카테고리까지 찾아야 한다.
+> 실무 적용시 : 재난의 유무가 아니라 재난의 카테고리까지 찾아야 한다.
 
+### ☺︎ [10 steps for challenging and improving NLP model](https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d?p=bc0c6c7c725246f9a2920c87fb2a6af3)
 
-Questions 
+3. one-hot encoding : GPT같은 것은 라벨이 onehot encoding으로 나옴         
+4. 길이가 들쭉날쭉한것 보다 패딩있는 것이 결과가 좋았다?       
+5. 커브가 내려가다가 뛰면 오버피팅하는 것이고, 계속 내려가면 상관없음        
+shuffle : 데이터가 뭔가 연속적으로 비슷한 형태라면 그것을 막기위해서 섞는 것       
+10. scale factors 
 
-실무에 적용한다면, 
-- 긍정/부정끼리 모으는 전처리 : 사람이 annotation이 되야함.
-- TF-IDF만 사용한다면 2번을 태워야 할 것
-- 키워드 지식 : 사전구축, 실제 자연어처리를 할때, 특정 도메인에 맞는 단어에 가중치를 줌. 은행 관련 도메인의 키워드는 '계좌이체'이런 것들. 
-키워드 지식이 이미 갖춰진 pre-trained model이 있다면 
+### ☺︎ Discussion
++ 실무에 적용한다면, 
+  - 긍정/부정끼리 모으는 전처리 : 사람이 annotation이 되야함.
+  - TF-IDF만 사용한다면 2번을 태워야 할 것
+  - 키워드 지식 : 사전구축, 실제 자연어처리를 할때, 특정 도메인에 맞는 단어에 가중치를 줌. 은행 관련 도메인의 키워드는 '계좌이체'이런 것 들
+  - 키워드 지식이 이미 갖춰진 pre-trained model이 있다면 
 
-공공도메인 데이터의 경우, 표준화가 된 데이터임. 
-실제 데이터를 받았을때는 줄이는 것이 필요. 
-
-TF-IDF대신 countvector이용해서 TF만 사용하는 것이 더 나을듯 
-Bert에 최적화되어 있는 것 
-
++ 공공도메인 데이터의 경우, 표준화가 된 데이터이지만, 실제 데이터를 받았을때는 줄이는 것이 필요
++ TF-IDF대신 countvector이용해서 TF만 사용하는 것이 더 나을듯 
++ Bert에 최적화되어 있는 것 
++ 파이토치의 경우 첫번째 에포크에서 이미 결정이 남 
 ++++++++++
 
-[10 steps for challenging and improving NLP model](https://www.notion.so/modulabs/NLP-w-DL-061fbb36c67d494fa062309914b4842d?p=bc0c6c7c725246f9a2920c87fb2a6af3)
 
-3. one-hot encoding : GPT같은 것은 라벨이 onehot encoding으로 나옴. 
-4. 길이가 들쭉날쭉한것 보다 패딩있는 것이 결과가 좋았다?
-5. 커브가 내려가다가 뛰면 오버피팅하는 것이고, 계속 내려가면 상관없음 
-shuffle : 데이터가 뭔가 연속적으로 비슷한 형태라면 그것을 막기위해서 섞는 것
-파이토치의 경우 첫번째 에포크에서 이미 결정이 난다. 
-10. scale factors 
 
 ****** 실제 실무에서 확인 할 것 ***
 모델 바꾸는 것보다 데이터에서 승부가 나는 것 
@@ -154,11 +157,23 @@ Hyperparameter : AutoML, optuna
 
 Bert의 토큰제한화 
 
+///// 의견 
+예로 Bert의 한계가 존재한다면, 
+이런 문제였을때는 다른 것 사용 할 것
+다른 접근법: 각 방법의 약점을 확인하면 좋을 듯
+Bert (Transformer)만 사용하다보니, 기존 모델들 RNN
+A : architecture 
+
+
+
 
 -------
 
 우승자 방법에 대한 설명 
 우리가 언급했던 부분에 대해서 각자 돌려보고 발표 
+
+
+
 
 
 -----------------------------------------------------------

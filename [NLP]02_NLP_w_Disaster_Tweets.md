@@ -6,8 +6,11 @@
 
 🦆 https://www.kaggle.com/c/nlp-getting-started
 
-> problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.\ 문제: 즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제 [1,2]
+> + problem statement : You are predicting whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0.     
++ 문제: 즉, 트윗 문장을 보고 disaster 나타내는 문장인지, 그와 관련된 단어가 있는 문장인지 판단하는 문제 [1,2]
 
+
+### ☺︎ Process
 - [x] Dataset
 - [x] EDA 
 - [x] Methodologies
@@ -81,13 +84,7 @@ y_pre=model.predict(test)
 ```
 
 ### ref 
-[1] https://www.kaggle.com/competitions/nlp-getting-started/data
-
-[2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html
-
-[3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove
-
+[1] https://www.kaggle.com/competitions/nlp-getting-started/data         
+[2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html            
+[3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove            
 [4] https://wikidocs.net/22885
-
-
-

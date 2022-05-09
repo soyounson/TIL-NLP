@@ -83,7 +83,8 @@ history=model.fit(X_train,y_train,batch_size=4,epochs=15,validation_data=(X_test
 y_pre=model.predict(test)
 ```
 
-### ref 
+
+## ☻ Reference
 [1] https://www.kaggle.com/competitions/nlp-getting-started/data         
 [2] https://onground-korea.github.io/machine_learning/2021/03/07/Kaggle-NLP.html            
 [3] https://www.kaggle.com/code/shahules/basic-eda-cleaning-and-glove            

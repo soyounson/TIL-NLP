@@ -67,3 +67,22 @@ https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html
 embedded : 800K
 domain : 
 
+
+개발적으로보면 (프로그램안에서의) 아키텍쳐 바꾼다고 성능이 좋아진다고 볼수 없다. -> 유지/보수
+(시스템안에서의) 아키텍쳐는 성능이 개선 가능  
+최적화는 버린다는 것의 의미
+
+
+-----------------
+ML 개념? 
+call back function : 도중에 끊을수가 없으니깐, listener같은 것  
++ early stopping
++ ModelCheckpoint
++ ReduceLROnPlateau
++ csvLogger
+
+
+
+
+Solve NLP proble, with deep learning : https://www.kaggle.com/code/megr25/twitter-nlp-feature-engineer-deep-learning
+

@@ -11,6 +11,8 @@
 추가적으로 정리가 필요함 
 
 
+모델에 돌려보고, 성능비교 
+
 ### ☺︎ attention 
 : 디코더에서 출력 단어를 예측하는 매 시점마다 인코더에서의 전체입력 문장을 다시 한번 참고.
 - dot production attention 
@@ -84,9 +86,14 @@ call back function : 도중에 끊을수가 없으니깐, listener같은 것
 + csvLogger
 
 
-Bert 
-XLnet
-T5
+Bert      
+XLnet      
+T5     
+ELMO 
+
+news 쓰거나 음악을 만들어내기도 하는데, 이때 decoder을 써야하는데, 이거는 autoregressive하고 이것은 only unidirection하다. 
+bert사용하면 성능이 떨어짐???   
+
 
 ------------------
 Solve NLP proble, with deep learning : https://www.kaggle.com/code/megr25/twitter-nlp-feature-engineer-deep-learning

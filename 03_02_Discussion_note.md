@@ -98,3 +98,11 @@ bert사용하면 성능이 떨어짐???
 ------------------
 Solve NLP proble, with deep learning : https://www.kaggle.com/code/megr25/twitter-nlp-feature-engineer-deep-learning
 
+----------------
+
+
+다음주 해야 할 것 
+data analysis 
+EDA
+baseline model 
+이론적인 것 확인 

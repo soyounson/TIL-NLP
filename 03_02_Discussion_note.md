@@ -44,6 +44,8 @@ ref: https://wikidocs.net/115055
   + MLM
   + NSP : 문장분류, binary classification 
 
+ref : https://www.kaggle.com/code/wrrosa/keras-bert-using-tfhub-modified-train-data
+
 
 ### ☺︎ Ensemble 
 ensemble 의 경우 TF-IDF를 이용한 후 사용함 

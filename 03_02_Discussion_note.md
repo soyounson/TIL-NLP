@@ -49,3 +49,21 @@ ref : https://www.kaggle.com/code/wrrosa/keras-bert-using-tfhub-modified-train-d
 
 ### ☺︎ Ensemble 
 ensemble 의 경우 TF-IDF를 이용한 후 사용함 
+
+
+
+
+---------------
+encoding은 줄이는 것이고, GPT말고 구글이 내놓은 것이 PaLM (줄이는 것이 아니라, 메모리를 늘리는 것)
++ google : PaLM
+http://aidev.co.kr/chatbotdeeplearning/11284
+https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html
+
++ meta : OPT 
+
++ Alpha code : https://towardsdatascience.com/deepminds-alphacode-explained-everything-you-need-to-know-5a86a15e1ab4
+
+
+embedded : 800K
+domain : 
+

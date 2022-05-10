@@ -8,6 +8,8 @@
 ## 🌱 풀잎스쿨 (5월 9일) 
 
 서로 같이 논의된 부분 및 공부한 것에 대해서 적음
+추가적으로 정리가 필요함 
+
 
 ### ☺︎ attention 
 : 디코더에서 출력 단어를 예측하는 매 시점마다 인코더에서의 전체입력 문장을 다시 한번 참고.
@@ -82,7 +84,10 @@ call back function : 도중에 끊을수가 없으니깐, listener같은 것
 + csvLogger
 
 
+Bert 
+XLnet
+T5
 
-
+------------------
 Solve NLP proble, with deep learning : https://www.kaggle.com/code/megr25/twitter-nlp-feature-engineer-deep-learning
 

@@ -97,7 +97,9 @@ papers w/ code
 앞단을 바꾸면 좋은 결과가 나올수가 있다. 혹은 망쳐지거나?!
 T5 : encoder-decoder 
 spanbert : 토큰을 이어 붙인 리스트? 토큰? 이것을 마스크로 사용함 
+deberta : bert의 후속인데 3가지정도의 큰 아이디어를 넣어서 알고리즘적으로 해결함 
 token : 떨어진 최소 단위
+실제 비지니스에서는 파인튜닝
 
 #### extra 
 CLS: stands for classification. It is added at the beginning because the training tasks here is sentence classification. And because they need an input that can represent the meaning of the entire sentence, they introduce a new tag.

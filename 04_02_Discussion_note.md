@@ -80,16 +80,30 @@ understand problem -> EDA -> baseline models -> improve performance
   NLP모델에 대한 SOTA공식
   가장 dependent한 것이 토크나이저? 토크나이저가 먼저 학습을 하고
   0이 아닌 것으로 토크나이저 하는 것으로써 버트가 ?
-  - 임베딩 : fixed size가 키 임
-  - 인코드 : 
-4.  
+  a. 임베딩 : fixed size가 키 임. 현재수준에서는 임베딩이 다 필요하다.
+  b. 인코드 
+[Roberta: a robustly optimized bert pretraining approach](https://github.com/facebookresearch/fairseq/blob/main/examples/roberta/README.md) 
+LSTM을 넣는 것이 하나의 팁으로 볼 수 있음. 
+
+![Fig01](/image/Untitled.png)
+
+ c. attend : dimension이 하나 줄어야 함. cls통해서 뽑는 것 보다 더 높은 점수를 줄수도 있음. 
+ d. predict: FFNN -> relu, gelu, tanh -> normalization -> dropout (classification넣기 바로 전에)
+    그리고 [optuna](https://optuna.org/)가 찾도록 함 
+    단어들과 단어들 사이의 id정보, position한 정보가 같이 들어감 
+    
+#### out of the box : someth creative  
+papers w/ code    
+앞단을 바꾸면 좋은 결과가 나올수가 있다. 혹은 망쳐지거나?!
+T5 : encoder-decoder 
+spanbert : 토큰을 이어 붙인 리스트? 토큰? 이것을 마스크로 사용함 
+token : 떨어진 최소 단위
+
+
+#### extra 
+CLS: stands for classification. It is added at the beginning because the training tasks here is sentence classification. And because they need an input that can represent the meaning of the entire sentence, they introduce a new tag.
 
 
 
-
-
-
-
-
-
-
+#### 확인해볼 내용 
+LIME, OPTUNA

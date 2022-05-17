@@ -8,6 +8,8 @@
 
 ## 🌱 풀잎스쿨 (5월 17일 2022년, 모두연구소 캠퍼스) 
 
+![Fig00](/image/google_bert.png)
+
 
 ## 🐻‍❄️ 발표 1 
 - baseline training 이후 성능을 높이기 위해서 EDA 작업 진행 
@@ -106,3 +108,9 @@ CLS: stands for classification. It is added at the beginning because the trainin
 
 #### 확인해볼 내용 
 LIME, OPTUNA
+
+#### Bert
+
+![Fig02](/image/bert-sentence-pair.png)
+sentence 1, sentence 2 
+sep은 이미 예약되어 있는 것 

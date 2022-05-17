@@ -33,6 +33,13 @@ extract global corpus statistics information
 정보량에 따라서 가중치를 줌 
 
 ### ☺︎ embedding layer 
+이산적인 값등을 수치적인 값으로 맵핑시키는 것 
+https://www.kaggle.com/code/rajmehra03/a-detailed-explanation-of-keras-embedding-layer/notebook
+[next sentend prediction, NSP](https://towardsdatascience.com/bert-for-next-sentence-prediction-466b67f8226f)
 
-
+### Bert 와 단어 임베딩 : input representation 
+token embedding 
+segment embedding 
+position embedding 
+-> 모두 가중치 벡터를 갖고와서 계산 
 

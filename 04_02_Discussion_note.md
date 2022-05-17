@@ -9,13 +9,13 @@
 ## 🌱 풀잎스쿨 (5월 17일 2022년, 모두연구소 캠퍼스) 
 
 
-### 발표 1 
+## 🐻‍❄️ 발표 1 
 - baseline training 이후 성능을 높이기 위해서 EDA 작업 진행 
 - [lime](https://github.com/marcotcr/lime) library : DL에서 제대로 학습하고 있는지를 NLP에 적용함 
 (ref: https://c3.ai/glossary/data-science/lime-local-interpretable-model-agnostic-explanations/) 
 (ref2 : https://christophm.github.io/interpretable-ml-book/lime.html)
  
-### 발표 2 
+## 🐻‍❄️ 발표 2 
 ### ☺︎ 단어표현
 코퍼스 구성하고 id 주는 것 
 ### 통계기반 기법 : 단어 빈도수에 따라 벡터로 표현 TF-IDF, 코사인 유사도, 
@@ -37,9 +37,28 @@ extract global corpus statistics information
 https://www.kaggle.com/code/rajmehra03/a-detailed-explanation-of-keras-embedding-layer/notebook
 [next sentend prediction, NSP](https://towardsdatascience.com/bert-for-next-sentence-prediction-466b67f8226f)
 
-### Bert 와 단어 임베딩 : input representation 
-token embedding 
-segment embedding 
-position embedding 
+### Bert 와 단어 임베딩 
+#### input representation 
+- token embedding 
+- segment embedding 
+- position embedding 
 -> 모두 가중치 벡터를 갖고와서 계산 
+
+#### 내부코드
+tf.gradients()로 학습 
+
+
+## 🐻‍❄️ 발표 3
+
+
+
+
+
+
+
+
+
+
+
+
 

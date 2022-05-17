@@ -55,7 +55,6 @@ understand problem -> EDA -> baseline models -> improve performance
 ### 자연어 처리 문제
 - 문장을 이해하면 풀수있는 문제들이 상당수를 차지함. 그래서 이것인지를 확인하고 베이스라인으로 감. 
 - 수치화로 나타내야함
-- 문장을 이해하면 풀수있는 문제들이 상당수를 차지함. 그래서 이것인지를 확인하고 베이스라인으로 감. 나
 - 문장을 이해하면 풀수있는 문제들이 상당수를 차지함. 그래서 이것인지를 확인하고 베이스라인으로 감. 
 - 그리고 나서 베이스라인대비 어떤식으로 최적화 할것인지 생각해 볼 것 
 - 최적화는 대체적으로 패턴이 있음. 
@@ -77,6 +76,12 @@ understand problem -> EDA -> baseline models -> improve performance
 2. 의미이해이용 
 3. 임베딩 수준 : 문자가 들어오면 그것이 벡터가 되는 과정이나 결과물 
   (단어-> 문장 -> 문서), pretrained model에서 bert가 나옴 
+  이것을 어떠한 형식으로 나타낸 것 [EEAP](https://explosion.ai/blog/deep-learning-formula-nlp#embed)
+  NLP모델에 대한 SOTA공식
+  가장 dependent한 것이 토크나이저? 토크나이저가 먼저 학습을 하고
+  0이 아닌 것으로 토크나이저 하는 것으로써 버트가 ?
+  - 임베딩 : fixed size가 키 임
+  - 인코드 : 
 4.  
 
 

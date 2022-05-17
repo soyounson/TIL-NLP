@@ -117,3 +117,5 @@ sentence 1, sentence 2
 sep은 이미 예약되어 있는 것 
 
 MT-DNN 관련 논문 : https://y-rok.github.io/nlp/2019/05/20/mt-dnn.html
+
+bert가 512개로 제한되어 있으므로 

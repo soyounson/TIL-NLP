@@ -1,4 +1,4 @@
-# 🦖 Quora Question Pairs 
+# 🦖 Quora Question Pairs (QQP)
 
 **written by Soyoun Son**         
 **Date : 051722**
@@ -48,8 +48,18 @@ https://www.kaggle.com/code/rajmehra03/a-detailed-explanation-of-keras-embedding
 tf.gradients()로 학습 
 
 
-## 🐻‍❄️ 발표 3
+## 🐻‍❄️ 발표, [NLP 문제해결전략](https://www.notion.so/modulabs/NLP-bdc7562bc0e146c69cbf55cf9590dcf7)
+#### process 
+understand problem -> EDA -> baseline models -> improve performance 
 
+### 자연어 처리 문제
+- 문장을 이해하면 풀수있는 문제들이 상당수를 차지함. 그래서 이것인지를 확인하고 베이스라인으로 감. 
+- 그리고 나서 베이스라인대비 어떤식으로 최적화 할것인지 생각해 볼 것 
+- 최적화는 대체적으로 패턴이 있음. 
+- out of the box (creative) 인 경우는 논문을 작성하는 것 (1년이상 시간소요) 따라서 캐글과는 거리가 있음. 
+- NLU : 글루에 8개 슈퍼글루에 9개? 이런식으로?
+- NLG : 
+- [wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) : 모든 단어들을 정형화 시켜놓음 
 
 
 

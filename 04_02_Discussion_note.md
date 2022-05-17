@@ -146,3 +146,11 @@ Log Loss is the negative average of the log of corrected predicted probabilities
 Let us understand it with an example
 
 [ref] https://www.analyticsvidhya.com/blog/2020/11/binary-cross-entropy-aka-log-loss-the-cost-function-used-in-logistic-regression/
+
+#### 다음주 
+papers w code 
+[leaderboard](https://www.kaggle.com/competitions/quora-question-pairs/leaderboard) 
+
+리더보드에 있는 모델들을 보고, 이 모델들의 어떤 특성때문에 이 모델의 성능이 좋은지 보고, 
+이것을 나중에 어떻게 나중에 사용할 수 있을지에 대해서 정리함. 
+https://paperswithcode.com/dataset/quora-question-pairs

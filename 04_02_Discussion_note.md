@@ -126,4 +126,23 @@ bert때문에 텐서 플로우에서 파이토치로 이동 (뭔가 좀 더 dyna
 근데, 파이토치의 커뮤니티가 더 큼 
 
 
+=====================================
 
+### data imbalance problem 
+- 발생할수 잇는 문제 : 과적합 
+- undersampling : data loss > **내일 적용해 볼 것** 
+- oversampling : data generation (most used method) 
+
+ref : https://joonable.tistory.com/27
+ref : https://xper100.tistory.com/7
+
+
+
+### logloss 손실함수 
+Log Loss is the most important classification metric based on probabilities. It’s hard to interpret raw log-loss values, but log-loss is still a good metric for comparing models. For any given problem, a lower log loss value means better predictions.
+
+Mathematical interpretation:
+Log Loss is the negative average of the log of corrected predicted probabilities for each instance.
+Let us understand it with an example
+
+[ref] https://www.analyticsvidhya.com/blog/2020/11/binary-cross-entropy-aka-log-loss-the-cost-function-used-in-logistic-regression/

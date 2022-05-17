@@ -48,7 +48,7 @@ https://www.kaggle.com/code/rajmehra03/a-detailed-explanation-of-keras-embedding
 tf.gradients()로 학습 
 
 
-## 🐻‍❄️ 발표, [NLP 문제해결전략](https://www.notion.so/modulabs/NLP-bdc7562bc0e146c69cbf55cf9590dcf7)
+## 🐻‍❄️ 발표 3, [NLP 문제해결전략](https://www.notion.so/modulabs/NLP-bdc7562bc0e146c69cbf55cf9590dcf7)
 #### process 
 understand problem -> EDA -> baseline models -> improve performance 
 
@@ -99,11 +99,8 @@ T5 : encoder-decoder
 spanbert : 토큰을 이어 붙인 리스트? 토큰? 이것을 마스크로 사용함 
 token : 떨어진 최소 단위
 
-
 #### extra 
 CLS: stands for classification. It is added at the beginning because the training tasks here is sentence classification. And because they need an input that can represent the meaning of the entire sentence, they introduce a new tag.
-
-
 
 #### 확인해볼 내용 
 LIME, OPTUNA

@@ -90,6 +90,7 @@ LSTM을 넣는 것이 하나의 팁으로 볼 수 있음.
 ![Fig01](/image/Untitled.png)
 
  c. attend : dimension이 하나 줄어야 함. cls통해서 뽑는 것 보다 더 높은 점수를 줄수도 있음. 
+ ![Fig01](/image/bert_attention.png)
  d. predict: FFNN -> relu, gelu, tanh -> normalization -> dropout (classification넣기 바로 전에)
     그리고 [optuna](https://optuna.org/)가 찾도록 함 
     단어들과 단어들 사이의 id정보, position한 정보가 같이 들어감 
@@ -114,3 +115,5 @@ LIME, OPTUNA
 ![Fig02](/image/bert-sentence-pair.png)
 sentence 1, sentence 2 
 sep은 이미 예약되어 있는 것 
+
+MT-DNN 관련 논문 : https://y-rok.github.io/nlp/2019/05/20/mt-dnn.html

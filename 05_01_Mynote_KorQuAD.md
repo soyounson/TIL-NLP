@@ -1,4 +1,4 @@
-# 🐝 KorQuad 1.0
+# 🐝 KorQuAD 1.0
 
 **written by Soyoun Son**         
 **Date : 052922**

@@ -1,5 +1,6 @@
 ## :black_heart: TIL, Today I Learned
 
+<img src="/image/모두의연구소_01.png" width="800">
 
 ### 🌱 풀잎스쿨 : NLP + Kaggle
 💡 [organization](https://github.com/MLFS19-NLP)

@@ -4,6 +4,9 @@
 ### 🌱 풀잎스쿨 : NLP + Kaggle
 💡 [organization](https://github.com/MLFS19-NLP)
 
+
+<img src="/image/NLP_presentation.jpg" width="500">
+
 (번호는 주차 수 의미)
 
 - [x] [02_01. Natural Language Processing with Disaster Tweets](https://github.com/soyounson/TIL-NLP/blob/main/02_NLP_w_Disaster_Tweets.md)

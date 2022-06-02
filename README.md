@@ -1,6 +1,6 @@
 ## :black_heart: TIL, Today I Learned
 
-<img src="/image/모두의연구소_01.png" width="600">
+<img src="/image/모두의연구소_01.png" width="400">
 
 
 

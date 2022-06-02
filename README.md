@@ -1,12 +1,15 @@
 ## :black_heart: TIL, Today I Learned
 
-<img src="/image/모두의연구소_01.png" width="800">
+<img src="/image/모두의연구소_01.png" width="600">
+
+
 
 ### 🌱 풀잎스쿨 : NLP + Kaggle
 💡 [organization](https://github.com/MLFS19-NLP)
 
 
 <img src="/image/NLP_presentation.jpg" width="500">
+pic by W.Hwang (053122) @ 모두의 연구소
 
 (번호는 주차 수 의미)
 
